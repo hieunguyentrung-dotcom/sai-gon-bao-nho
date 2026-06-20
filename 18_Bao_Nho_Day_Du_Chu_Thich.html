@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sài Gòn,<br>bao nhớ... — Ngữ liệu Dịch thuật</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1A1208;
+    --paper: #F7F2E8;
+    --aged: #EDE5D0;
+    --crease: #D4C9B0;
+    --rust: #7B3F00;
+    --rust-light: #B5651D;
+    --gold: #9B7B2E;
+    --gold-light: #C9A84C;
+    --muted: #5C4F3A;
+    --accent: #2C4A6E;
+    --page-bg: #EAE0CC;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--page-bg);
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(180,165,130,0.15) 27px, rgba(180,165,130,0.15) 28px);
+    font-family: 'Crimson Pro', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 40px 20px 60px;
+  }
+
+  .page-wrapper { max-width: 780px; margin: 0 auto; }
+
+  .header-meta {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 32px; padding-bottom: 16px;
+    border-bottom: 1px solid var(--crease);
+  }
+  .source-badge {
+    font-family: 'Space Mono', monospace; font-size: 10px;
+    letter-spacing: 2px; color: var(--muted); text-transform: uppercase;
+  }
+  .source-badge span { color: var(--rust); font-weight: 700; }
+  .task-badge {
+    background: var(--rust); color: var(--paper);
+    font-family: 'Space Mono', monospace; font-size: 9px;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 2px;
+  }
+
+  .story-card {
+    background: var(--paper); border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06), 4px 4px 0 var(--crease);
+    overflow: hidden; position: relative;
+  }
+  .story-card::before {
+    content: ''; position: absolute; left: 72px; top: 0; bottom: 0;
+    width: 1px; background: rgba(181,101,29,0.25); pointer-events: none;
+  }
+
+  .title-block {
+    padding: 48px 56px 36px 88px;
+    border-bottom: 1px solid var(--crease); position: relative;
+  }
+  .title-number {
+    position: absolute; left: 0; top: 48px; width: 72px;
+    font-family: 'Space Mono', monospace; font-size: 9px;
+    color: var(--rust-light); letter-spacing: 1px; text-transform: uppercase;
+    writing-mode: vertical-rl; transform: rotate(180deg);
+    height: 80px; display: flex; align-items: center; justify-content: center;
+  }
+  .story-title {
+    font-family: 'Playfair Display', serif; font-size: 40px;
+    font-weight: 900; color: var(--ink); line-height: 1.15;
+    letter-spacing: -0.5px; margin-bottom: 8px;
+  }
+  .story-subtitle {
+    font-size: 16px; font-style: italic; color: var(--muted);
+  }
+  .author-line {
+    margin-top: 16px; display: flex; align-items: center; gap: 12px;
+  }
+  .author-line::before {
+    content: ''; width: 32px; height: 1px; background: var(--gold);
+  }
+  .author-name {
+    font-family: 'Space Mono', monospace; font-size: 11px;
+    color: var(--gold); letter-spacing: 1px; text-transform: uppercase;
+  }
+
+  .story-body { padding: 36px 56px 44px 88px; }
+
+  .prose {
+    font-size: 18px; line-height: 1.9; color: var(--ink);
+    font-weight: 300; margin-bottom: 22px; text-align: justify;
+  }
+
+  .prose.opening::first-letter {
+    font-family: 'Playfair Display', serif; font-size: 72px;
+    font-weight: 900; float: left; line-height: 0.75;
+    margin-right: 8px; margin-top: 8px; color: var(--rust);
+  }
+
+  .scene-break {
+    text-align: center; color: var(--gold); font-size: 18px;
+    margin: 28px 0; letter-spacing: 12px;
+  }
+
+  .closing-prose {
+    font-size: 18px; line-height: 1.9; color: var(--ink);
+    font-weight: 300; margin-top: 24px; font-style: italic;
+    text-align: center; padding: 24px 32px;
+    border-top: 1px solid var(--crease);
+    border-bottom: 1px solid var(--crease);
+  }
+
+  .slang {
+    border-bottom: 1px dashed var(--rust-light);
+    color: var(--rust); cursor: help;
+  }
+
+  .page-footer {
+    margin-top: 32px; padding-top: 16px;
+    border-top: 1px solid var(--crease);
+    display: flex; justify-content: space-between;
+  }
+  .footer-text {
+    font-family: 'Space Mono', monospace; font-size: 9px;
+    color: var(--muted); letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <div class="header-meta">
+    <div class="source-badge">Ngữ liệu dịch thuật  ·  <span>Trích: Sài Gòn Bao Nhớ</span>  ·  Đàm Hà Phú</div>
+    <div class="task-badge">Phiếu Thực hành & Đánh giá</div>
+  </div>
+
+  <div class="story-card">
+
+    <div class="title-block">
+      <div class="title-number">Ngữ liệu</div>
+      <div class="story-title">Sài Gòn,<br>bao nhớ...</div>
+      <div class="story-subtitle">Tản văn — Khái niệm văn hóa đặc thù miền Nam</div>
+      <div class="author-line">
+        <div class="author-name">Đàm Hà Phú</div>
+      </div>
+    </div>
+
+    <div class="story-body">
+      <p class="prose opening">Lần đầu tôi đến Sài Gòn là năm 1991, lúc đó Sài Gòn có hàng ngàn thứ lạ lẫm đối với một chàng trai tỉnh lẻ như tôi. Một trong những thứ đó là chữ "bao". Đầu tiên là gặp vựa trái cây, ở bên quận 8 bộn, có lẽ do ngay bến ghe thương hồ từ miền Tây lên nên trái cây ngon, <span class="slang" title="ăn thoải mái tại chỗ trước khi mua">trái cây <span class="slang" title="cam kết được ăn thoải mái, không giới hạn">bao ăn</span></span>. Tôi ghé vô hỏi thẳng, bao ăn là sao chú. Ông lão, tay chụp thơm ném dưới ghe lên thoăn thoắt, miệng ngậm thuốc rê, trả lời gọn lỏn, ăn thoải mái, thích thì mua không thích đừng.</p>
+
+      <p class="prose">Vậy là ghé thử liền, chôm chôm Vĩnh Long trái đỏ lựng, lột ăn thoải mái, sầu riêng tách vỏ sẵn, muốn ăn lấy tay xé ăn, măng cụt có con dao thái cắm miệng cần xé, ăn trái nào hớt đầu trái đó... Ăn xong, <span class="slang" title="đã thỏa mãn, đã đủ"><span class="slang" title="đã thỏa mãn, đã đủ">đã nư</span></span> rồi mua mỗi thứ một ít làm quà, cân 3 ký chôm chôm xong chị bán hàng còn bốc thêm vài bốc bỏ vô, một chục măng cụt tính mười bốn trái, mua trái sầu riêng được tặng luôn trái hồi nãy mới thử.</p>
+
+      <div class="scene-break">· · ·</div>
+
+      <p class="prose">Lần nữa là chuyện <span class="slang" title="cam kết giá rẻ nhất"><span class="slang" title="cam kết giá rẻ nhất">bao rẻ</span></span>. Chỗ bán đồ sida đường Nguyễn Đình Chiểu, tôi mua cái áo jeans, chị bán áo nói đồ ở đây bao rẻ, đi đâu rẻ hơn lại đây chị đền, mua bận xong đi đi lững thững xuống cuối dãy, thấy cái áo y chang, hỏi ra giá rẻ hơn, tôi thiệt tình quay lại bắt đền. Chị bán hàng <span class="slang" title="biện minh, giải thích dài dòng"><span class="slang" title="biện minh, giải thích dài dòng">thanh minh thanh nga</span></span>, nói đồ cũ mà, tùm lum giá, nhưng mà đã bao rẻ thành ra chị tặng thêm cái nón jeans cho đủ bộ, lỗ của chị hai chục rồi nha. Vậy là vui lòng liền.</p>
+
+      <div class="scene-break">· · ·</div>
+
+      <p class="prose">Xưa, thời sinh viên, tôi sống thoải mái nhờ mấy quán chuyên <span class="slang" title="cho phép nợ, ghi sổ, không cần thế chấp"><span class="slang" title="cho phép nợ, ghi sổ, không cần thế chấp">bao thiếu</span></span>, thiếu thoải mái, không cần cầm cố, không cần danh tánh, không cần ai bảo lãnh. Cơm có chị Phượng, cà phê có quán Ngọc, nhậu có quán anh Tiên, ngày nào cũng một cữ cơm, một cữ cà phê và một cữ nhậu. Không tiền cũng cứ vào quán, kêu những món quen thuộc, xong cứ đứng lên đi, đưa tay làm dấu trên không giống như ký tên, rồi ra về, tiền bạc cuối tháng có thì trả, không có hai ba tháng trả, nhiều đứa ra trường đi làm cả năm rồi mới quay lại trả, không sao hết, người ta bao thiếu thì mình <span class="slang" title="cam kết được trả lại nếu không ưng ý">bao trả</span>, không so đo.</p>
+
+      <div class="scene-break">· · ·</div>
+
+      <p class="prose">Có lần tôi đánh nhau với giang hồ ở Thủ Đức, hai bên đánh <span class="slang" title="đánh nhau giáp lá cà, cận chiến"><span class="slang" title="đánh nhau giáp lá cà, cận chiến">xáp lá cà</span></span>, ném không biết bao nhiêu là ly chai, đánh xong đi về, băng giang hồ kia quay lại gặp chủ quán, bao nhiêu ly chai bàn ghế bị bể chủ quán cứ nói một tiếng, họ đền đầy đủ. Lần khác tôi uống rượu với giang hồ bến xe Chợ Lớn, uống từ trưa, đến tối thì hết mồi, một anh trong bọn nói bữa nay ở nhà bà già nấu món gì đó, lâu quá tôi quên, để tao chạy về xin bả, nói đoạn ra chỗ dựng <span class="slang" title="tiếng lóng chỉ xe Honda Cup đời cũ"><span class="slang" title="tiếng lóng chỉ xe Honda Cup đời cũ">chiếc cối</span></span>, chắc là có độ lại, gạt chống, rồi ga quay xe xẹt lửa, lao đi.</p>
+
+      <p class="prose">Chẳng may màn biểu diễn xe không chuẩn bởi đã say, anh chàng <span class="slang" title="động tác nhấc bánh trước xe máy lên cao"><span class="slang" title="động tác nhấc bánh trước xe máy lên cao">bốc đầu</span></span> quá trớn, xe quăng tới trước người rót lại, chiếc xe quăng tới đụng vô một cái tủ thuốc, bể miếng kiếng, văng thuốc lá tùm lum. Chị bán thuốc chửi anh giang hồ lúc này đang đau đớn lồm cồm dậy dắt xe, chửi té tát. Anh chàng đó, tôi nhớ là lúc đó ở trần, người ngợm xăm vằn vện, thẹo thọ, nhăn nhở cười xin lỗi chị bán thuốc nọ rối rít, nói, thôi bà làm gì dữ vai, đừng chửi nữa, bao nhiêu tui đền, tui đền. Sau nhậu lại, mình nói anh chơi hay quá, ảnh nói, giang hồ với nhau chớ không giang hồ với người ta, mình sai mình phải xin lỗi, phải đền chớ, ui, nói nghe, dân Sài Gòn chơi <span class="slang" title="cam kết xử sự đẹp, đàng hoàng"><span class="slang" title="cam kết xử sự đẹp, đàng hoàng">bao đẹp</span></span>, không đẹp không ăn tiền nha.</p>
+
+      <div class="scene-break">· · ·</div>
+
+      <p class="prose">Sài Gòn đúng nghĩa buôn bán là vậy. Hồi xưa vậy, nay hao mòn nhiều, nhưng nếu gặp đúng người Sài Gòn, người miền Tây thì vẫn còn. Trái cây <span class="slang" title="cam kết được ăn thoải mái, không giới hạn">bao ăn</span>, bao ngọt, đồ ăn <span class="slang" title="cam kết giá rẻ nhất">bao rẻ</span>, quần áo <span class="slang" title="cam kết xử sự đẹp, đàng hoàng">bao đẹp</span>, đậu xe bao trật tự, đi nhậu bao say, chơi bao vui, quán xá <span class="slang" title="cho phép nợ, ghi sổ, không cần thế chấp">bao thiếu</span>, hàng hóa bao thử, bao đổi, <span class="slang" title="cam kết được trả lại nếu không ưng ý">bao trả</span>, kể cả ti vi đầu máy điện thoại, mua rồi không ưng cũng bao trả lại luôn... "bao", nghĩa là cam kết miệng với người ta rằng họ phải hài lòng với cái mà họ nhận được, bao hài lòng, cái chữ bao đơn giản nghe như chơi rồi bỏ, nhưng nó là cam kết nghiêm túc và hào hiệp, rất riêng, của người miền Nam. Nhiều người buôn bán sau này từ nơi khác tới, học đòi chữ bao nhưng thực hiện khó, bởi phải thiệt lòng, thiệt tình, bởi không có luật nào bắt buộc phải "bao", chỉ có thứ luật mơ hồ di truyền đâu đó từ những ngày khẩn hoang mở cõi, thời con người tin nhau, sống phải với nhau, tới bây giờ.</p>
+
+      <p class="closing-prose">Bởi, tôi sống ở Sài Gòn hơn hai chục năm, tôi dám nói, Sài Gòn bao nhớ.<br>Ai từng sống ở Sài Gòn, dù ghét dù yêu, dù đã ra đi tìm miền đất hứa hay quay về cố xứ sinh nhai,<br>đều nhớ Sài Gòn — nhớ cái ồn ào bụi bặm,<br>nhớ một mảng đời lộn xộn ngược xuôi,<br>mạnh ai nấy sống nhưng yên tâm là ai cũng sống được,<br>dù rất khác lạ, nhưng cũng rất thân quen, rất nhớ.<br><br>Như tôi, mỗi ngày, tôi đều nhớ Sài Gòn. Sài Gòn bao nhớ mà.</p>
+
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <div class="footer-text">Trích: Đàm Hà Phú — Sài Gòn Bao Nhớ  ·  Ngữ liệu chính thức — Khái niệm 'bao'</div>
+    <div class="footer-text">House (1997) TQA  ·  COPES (Winne & Hadwin, 1998)</div>
+  </div>
+
+</div>
+</body>
+</html>
